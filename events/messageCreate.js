@@ -82,8 +82,8 @@ module.exports = {
 
 		// Check if mesage does not starts with prefix, or message author is bot. If yes, return.
 
-		if (!message.content.startsWith(matchedPrefix) || message.author.bot)
-			return;
+		if (!message.content.toLowerCase().startsWith(matchedPrefix) || message.author.bot)
+			return ;
 
 		const command =
 			client.commands.get(commandName) ||
@@ -163,7 +163,7 @@ module.exports = {
 
 		// execute the final command. Put everything above this.
 		try {
-			command.execute(message, args);
+			command.execute(client,message, args);
 		} catch (error) {
 			console.error(error);
 			message.reply({

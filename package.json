@@ -6,31 +6,20 @@
 	"types": "./typings.d.ts",
 	"main": "bot.js",
 	"scripts": {
-		"start": "node bot.js"
+		"start": "node bot.js",
+		"dev": "node --trace-deprecation --trace-warnings bot.js"
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/NamVr/DiscordBot-Template.git"
+		"url": "git+https://github.com/Xx-Mohit-xX/Kirby-Bot.git"
 	},
 	"keywords": [
 		"discord-js"
 	],
 	"author": {
 		"name": "Naman Vrati",
-		"url": "https://github.com/NamVr",
-		"email": "info@namanvrati.cf"
+		"url": "https://github.com/Xx-Mohit-xX"
 	},
-	"contributors": [
-		{
-			"name": "Krish Garg",
-			"url": "https://github.com/KrishGarg"
-		},
-		{
-			"name": "Thomas Fournier",
-			"email": "thomas@artivain.com",
-			"url": "https://github.com/GoudronViande24"
-		}
-	],
 	"license": "Apache-2.0",
 	"bugs": {
 		"url": "https://github.com/NamVr/DiscordBot-Template/issues"
@@ -38,7 +27,13 @@
 	"homepage": "https://github.com/NamVr/DiscordBot-Template#readme",
 	"dependencies": {
 		"@discordjs/rest": "^1.0.0",
+		"axios": "^0.27.2",
 		"discord-api-types": "^0.36.2",
-		"discord.js": "^14.0.2"
+		"discord.js": "^14.0.2",
+		"dotenv": "^16.0.3"
+	},
+	"devDependencies": {
+		"node": "^18.9.0",
+		"npm": "^8.19.1"
 	}
 }

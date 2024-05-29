@@ -22,8 +22,7 @@ module.exports = {
 
 		if (!interaction.isSelectMenu()) return;
 
-		const command = client.selectCommands.get(interaction.customId);
-
+		const command = client.selectCommands.get(interaction.values[1]);
 		// If the interaction is not a command in cache, return error message.
 		// You can modify the error message at ./messages/defaultSelectError.js file!
 
@@ -35,7 +34,7 @@ module.exports = {
 		// A try to execute the interaction.
 
 		try {
-			await command.execute(interaction);
+			await command.execute(client, interaction);
 			return;
 		} catch (err) {
 			console.error(err);

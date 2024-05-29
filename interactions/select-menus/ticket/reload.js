@@ -9,12 +9,13 @@
  * @type {import('../../../typings').SelectInteractionCommand}
  */
 module.exports = {
-	id: "sample",
+	id: "reload01",
 
 	async execute(interaction) {
-		await interaction.reply({
-			content: "This was a reply from select menu handler!",
-		});
-		return;
+
+    //await interaction.update()
+        //const chanz = client.channels.cache.get('877986159236636744');
+        //chanz.send('ingore reload')
+   
 	},
 };

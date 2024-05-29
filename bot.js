@@ -14,9 +14,10 @@ const {
 	GatewayIntentBits,
 	Partials,
 } = require("discord.js");
-const { REST } = require("@discordjs/rest");
-const { Routes } = require("discord-api-types/v9");
+//const { REST } = require("@discordjs/rest");
+//const { Routes } = require("discord-api-types/v9");
 const { token, client_id, test_guild_id } = require("./config.json");
+require('dotenv').config()
 
 /**
  * From v13, specifying the intents is compulsory.
@@ -62,7 +63,7 @@ for (const file of eventFiles) {
 
 /**********************************************************************/
 // Define Collection of Commands, Slash Commands and cooldowns
-
+client.color = 0xfca7b4
 client.commands = new Collection();
 client.slashCommands = new Collection();
 client.buttonCommands = new Collection();
@@ -234,7 +235,7 @@ for (const module of selectMenus) {
 
 /**********************************************************************/
 // Registration of Slash-Commands in Discord API
-
+/*
 const rest = new REST({ version: "9" }).setToken(token);
 
 const commandJsonData = [
@@ -253,7 +254,7 @@ const commandJsonData = [
 			 * 1. Please uncomment the below (commented) line to deploy global commands.
 			 * 2. Please comment the below (uncommented) line (for guild commands).
 			 */
-
+/**
 			Routes.applicationGuildCommands(client_id, test_guild_id),
 
 			/**
@@ -263,7 +264,7 @@ const commandJsonData = [
 			 */
 
 			// Routes.applicationCommands(client_id)
-
+/**
 			{ body: commandJsonData }
 		);
 
@@ -272,7 +273,7 @@ const commandJsonData = [
 		console.error(error);
 	}
 })();
-
+*/
 /**********************************************************************/
 // Registration of Message Based Chat Triggers
 
@@ -296,5 +297,5 @@ for (const folder of triggerFolders) {
 }
 
 // Login into your client application with bot's token.
-
-client.login(token);
+module.exports = client
+client.login(process.env.token);
